@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:url(image.png);
+            
+            
+        }
+        
+        .navbar {
+            background-color: black;
+            display: flex;
+            height: 60px;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .logo {
+            color: white;
+            font-size: 15px;
+            width: 200px;
+            margin-left: 20px;
+        }
+        ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-style: bold;
+            padding: 10px 20px;
+        }
+
+        .ham-menu {
+            display: none;
+            color: white;     
+        }
+
+        #check-box {
+            display: none;
+        }
+        button{
+            float: left;
+        }
+
+        @media (max-width: 830px) {
+            ul + div{
+                display: none;
+            }
+            .navbar{
+                justify-content: space-between;
+            }
+        
+            .ham-menu {
+                display: block;
+                font-size: 24px;
+                margin-right: 40px;
+                cursor: pointer;
+                
+            }
+            .logo{
+                margin-left: 60px;
+            }
+
+            ul{
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                background-color: black;
+                color: black;
+                top: 60px; 
+                left: 100%;
+                position:fixed;
+                transition: 1s;
+                text-align: center;   
+            }
+
+            li{
+                padding: 40px 0px 40px 0px; 
+            }
+
+            #check-box:checked ~ ul{
+                left:0%;
+                padding: 35px 0px 35px 0px; 
+            }
+
+            #check-box:checked ~ ul li {
+                width: 100%;
+                color: black;
+                text-decoration: none;
+                font-size: 17px;
+                font-style: bold;
+                padding: 40px 0px 40px 0px; 
+            
+            }
+            #check-box:checked ~ ul li a{
+                padding: 0;
+            }
+          
+        }
+    </style>
+</head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Navbar</h1>
+            </div>
+            <input type="checkbox" id="check-box" />
+            <label for="check-box" class="ham-menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+        
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallary</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div>
+                <button>Github</button>
+            </div>
+            
+        </div>
+
+    </body>
+</html>
